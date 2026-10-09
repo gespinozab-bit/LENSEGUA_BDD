@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gestión de contenidos | LENSEGUA</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="contenidos.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <p class="brand">LENSEGUA</p>
+      <p class="context">Material educativo visual</p>
+    </div>
+    <span class="role">DOCENTE</span>
+  </header>
+
+  <main class="layout">
+    <section class="panel" aria-labelledby="page-title">
+      <p class="eyebrow">ADMINISTRACIÓN DE CONTENIDOS</p>
+      <h1 id="page-title">Publicar material educativo</h1>
+      <p class="intro">Prepare el recurso, guárdelo como borrador y publíquelo únicamente después de revisarlo.</p>
+
+      <form id="content-form" novalidate>
+        <div class="grid-two">
+          <div class="field">
+            <label for="module">Módulo</label>
+            <select id="module" name="module">
+              <option value="">Seleccione un módulo</option>
+              <option value="Vocales">Vocales</option>
+              <option value="Números">Números</option>
+              <option value="Abecedario">Abecedario</option>
+              <option value="Colores">Colores</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="resource-type">Tipo de recurso</label>
+            <select id="resource-type" name="resource-type">
+              <option value="Imagen">Imagen</option>
+              <option value="Video">Video</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="title">Título</label>
+          <input id="title" name="title" type="text" placeholder="Ejemplo: La vocal A">
+        </div>
+
+        <div class="field">
+          <label for="resource-url">Recurso multimedia</label>
+          <input id="resource-url" name="resource-url" type="url" placeholder="https://ejemplo.local/recurso.mp4">
+        </div>
+
+        <div class="field">
+          <label for="description">Descripción breve</label>
+          <textarea id="description" name="description" rows="3" placeholder="Explique qué aprenderá el estudiante"></textarea>
+        </div>
+
+        <label class="check-row" for="reviewed">
+          <input id="reviewed" type="checkbox">
+          <span>Confirmo que el material fue revisado y es adecuado para los estudiantes.</span>
+        </label>
+
+        <div class="actions">
+          <button id="save-draft" class="secondary" type="button">Guardar borrador</button>
+          <button id="publish" class="primary" type="button">Publicar contenido</button>
+        </div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <aside class="panel preview-panel" aria-labelledby="preview-title">
+      <p class="eyebrow">VISTA DE CONTROL</p>
+      <h2 id="preview-title">Estado del contenido</h2>
+      <div id="empty-state" class="empty-state">Aún no se ha guardado contenido.</div>
+      <article id="content-card" class="content-card" hidden>
+        <div class="card-topline">
+          <span id="content-module" class="module-chip"></span>
+          <span id="content-status" class="status-chip"></span>
+        </div>
+        <h3 id="content-title"></h3>
+        <p id="content-resource"></p>
+        <button id="deactivate" class="danger" type="button" hidden>Desactivar contenido</button>
+      </article>
+
+      <div class="student-preview">
+        <h2>Portal estudiantil</h2>
+        <p>Solo el material publicado y activo aparece en esta vista.</p>
+        <div id="student-list" class="student-list">
+          <span id="student-empty">Sin contenidos disponibles</span>
+        </div>
+      </div>
+    </aside>
+  </main>
+</body>
+</html>
