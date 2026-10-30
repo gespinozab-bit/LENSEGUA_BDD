@@ -70,6 +70,10 @@ pytest --html=reportes/reporte-bdd.html --self-contained-html --junitxml=reporte
 
 El workflow `.github/workflows/tests.yml` ejecuta los escenarios en cada `push`, `pull_request` o inicio manual. Configura Python 3.12, Chrome y ChromeDriver, instala las dependencias, ejecuta las pruebas y publica el reporte HTML y el resultado JUnit como artefactos descargables.
 
+En CI, Selenium recibe las rutas de Chrome y ChromeDriver mediante
+`CHROME_BIN` y `CHROMEDRIVER_PATH` desde el paso de instalación. En local,
+si no se definen estas variables, Selenium detecta el navegador automáticamente.
+
 ## Revisión después del sprint
 
 La revisión propuesta debe confirmar:
@@ -83,3 +87,7 @@ La revisión propuesta debe confirmar:
 ## Evidencia pendiente en GitHub
 
 Después de subir esta carpeta a un repositorio, ejecute el workflow **Pruebas BDD LENSEGUA** y agregue en `Evidencias/` una captura de la ejecución completada. Esa captura confirma la ejecución real en CI y no debe sustituirse por una imagen simulada.
+
+Repositorio: https://github.com/gespinozab-bit/LENSEGUA_BDD.
+Consulte [Evidencias/README.md](Evidencias/README.md) para el estado y los pasos
+pendientes. La evidencia sigue pendiente hasta guardar y subir la captura real.

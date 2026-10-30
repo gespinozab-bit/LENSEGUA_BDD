@@ -1,9 +1,11 @@
+import os
 from pathlib import Path
 
 import pytest
 from pytest_bdd import given, parsers, scenarios, then, when
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import Select, WebDriverWait
 
@@ -23,9 +25,14 @@ def driver():
     options.add_argument("--disable-dev-shm-usage")
     options.add_argument("--window-size=1440,1100")
     options.add_argument("--allow-file-access-from-files")
-    browser = webdriver.Chrome(options=options)
-    yield browser
-    browser.quit()
+    if os.environ.get("CHROME_BIN"):
+        options.binary_location = os.environ["CHROME_BIN"]
+    service = Service(executable_path=os.environ.get("CHROMEDRIVER_PATH"))
+    browser = webdriver.Chrome(service=service, options=options)
+    try:
+        yield browser
+    finally:
+        browser.quit()
 
 
 @given("que estoy en la gestión de contenidos de LENSEGUA")
