@@ -1,20 +1,31 @@
-# Evidencia real de GitHub Actions
+# Evidencias del laboratorio BDD
 
-Estado: pendiente de una ejecución correcta y su captura real.
+| Requisito | Evidencia | Estado |
+| --- | --- | --- |
+| Piloto | Publicación controlada de material educativo; objetivo en el README principal | Documentado |
+| Taller de tres amigos y 5 a 10 escenarios | Siete escenarios y [análisis de los tres roles](taller-tres-amigos.md) | Documentado como ejercicio académico |
+| Automatización | `tests/test_publicacion_contenido.py`, con pytest-bdd, pytest y Selenium | Implementada; siete pruebas aprobadas en la validación local |
+| CI con resultados visibles | Workflow Pruebas BDD LENSEGUA y captura real en GitHub | Completado |
+| Revisión tras un sprint | [Revisión académica del piloto](revision-sprint.md) | Guía aplicada a los escenarios y resultados |
 
-La ejecución https://github.com/gespinozab-bit/LENSEGUA_BDD/actions/runs/37893087794
-terminó con error en el paso de pruebas. No acredita pruebas aprobadas.
+## Ejecución real de GitHub Actions
 
-Para completar la evidencia:
+- [Ejecución #2 aprobada, correspondiente a la captura](https://github.com/gespinozab-bit/LENSEGUA_BDD/actions/runs/41082429592).
+- [Captura real subida al repositorio](https://github.com/gespinozab-bit/LENSEGUA_BDD/blob/main/Evidencias/Captura%20de%20pantalla%202026-10-30%20093906.png).
+- [Ejecución posterior a la subida de la evidencia, también aprobada](https://github.com/gespinozab-bit/LENSEGUA_BDD/actions/runs/41082920074).
 
-1. Subir los cambios del workflow y las pruebas al repositorio.
-2. Ejecutar **Pruebas BDD LENSEGUA** en GitHub Actions.
-3. Verificar el resultado correcto y los siete escenarios aprobados en los registros.
-4. Capturar la página real de esa ejecución mostrando el repositorio, el nombre
-   del workflow y el resultado. Guardar la imagen en esta carpeta como
-   `github-actions-bdd.png`.
-5. Registrar aquí la URL de la ejecución aprobada y subir la captura al repositorio.
+La captura se llama `Captura de pantalla 2026-10-30 093906.png`. No es necesario
+renombrarla. La primera ejecución fallida se conserva en el historial, pero las
+ejecuciones aprobadas enlazadas arriba acreditan el cumplimiento.
 
-Los reportes HTML y JUnit se publican en el artefacto
-`resultados-bdd-lensegua`. Las pruebas locales y los reportes no sustituyen la
-captura solicitada de GitHub Actions. No usar imágenes simuladas.
+Los reportes locales no sustituyen la captura real de GitHub Actions.
+El workflow local está configurado para publicar reportes HTML y JUnit como
+artefacto `resultados-bdd-lensegua`; comprobar su disponibilidad en cada ejecución.
+
+## Alcance académico
+
+Según la aclaración del estudiante, el taller y la revisión son referencias de
+la guía para analizar el flujo elegido dentro del sistema. Los documentos
+desarrollan las perspectivas de negocio, desarrollo y QA y la revisión de las
+reglas del piloto. No se requieren actas de reuniones para este alcance ni se
+atribuyen aprobaciones a personas externas.
