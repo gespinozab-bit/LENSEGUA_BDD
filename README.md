@@ -14,6 +14,10 @@ Los escenarios fueron definidos desde tres perspectivas:
 - **Desarrollo:** el formulario debe controlar campos obligatorios, estados y actualización de la vista estudiantil.
 - **QA:** cada regla debe tener un resultado observable y automatizable.
 
+En este laboratorio, los tres amigos son una guía académica para analizar el
+flujo elegido desde negocio, desarrollo y QA. El análisis aplicado está en
+[Taller de tres amigos](Evidencias/taller-tres-amigos.md).
+
 ## Escenarios automatizados
 
 El archivo `features/publicacion_contenido.feature` contiene siete escenarios:
@@ -76,7 +80,10 @@ si no se definen estas variables, Selenium detecta el navegador automáticamente
 
 ## Revisión después del sprint
 
-La revisión propuesta debe confirmar:
+La [revisión académica del piloto](Evidencias/revision-sprint.md) aplica las
+preguntas de la guía a los siete escenarios y sus resultados observables.
+
+Los criterios de revisión son:
 
 - El docente entiende los escenarios sin leer el código.
 - Los mensajes coinciden con las reglas del proceso.
@@ -84,10 +91,16 @@ La revisión propuesta debe confirmar:
 - Solo el material revisado puede publicarse.
 - Los cambios solicitados por negocio se incorporan al archivo `.feature` antes del siguiente sprint.
 
-## Evidencia pendiente en GitHub
+## Evidencia de GitHub Actions
 
-Después de subir esta carpeta a un repositorio, ejecute el workflow **Pruebas BDD LENSEGUA** y agregue en `Evidencias/` una captura de la ejecución completada. Esa captura confirma la ejecución real en CI y no debe sustituirse por una imagen simulada.
+Estado: **completado para el requisito de ejecución y captura en CI**.
+
+El workflow **Pruebas BDD LENSEGUA** terminó correctamente en la
+[ejecución #2](https://github.com/gespinozab-bit/LENSEGUA_BDD/actions/runs/41082429592).
+La [captura real](https://github.com/gespinozab-bit/LENSEGUA_BDD/blob/main/Evidencias/Captura%20de%20pantalla%202026-10-30%20093906.png)
+está en `Evidencias/` del repositorio. La ejecución posterior a su subida también
+terminó correctamente.
 
 Repositorio: https://github.com/gespinozab-bit/LENSEGUA_BDD.
-Consulte [Evidencias/README.md](Evidencias/README.md) para el estado y los pasos
-pendientes. La evidencia sigue pendiente hasta guardar y subir la captura real.
+Consulte [Evidencias/README.md](Evidencias/README.md) para la correspondencia
+entre los cinco puntos de la guía y los entregables del laboratorio.
